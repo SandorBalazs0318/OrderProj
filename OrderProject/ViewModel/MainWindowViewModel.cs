@@ -27,25 +27,25 @@ namespace OrderProject.ViewModel
         [RelayCommand]
         private void ShowMegrendelesView()
         {
-            _currentView = _megrendelesViewModel;
+            CurrentView = _megrendelesViewModel;
         }
 
         [RelayCommand]
         private void ShowAruView()
         {
-            _currentView = _aruViewModel;
+            CurrentView = _aruViewModel;
         }
 
         [RelayCommand]
         private void ShowModositasView()
         {
-            _currentView = _modositasViewModel;
+            CurrentView = _modositasViewModel;
         }
 
         [RelayCommand]
         private void ShowKezelesView()
         {
-            _currentView = _kezelesViewModel;
+            CurrentView = _kezelesViewModel;
         }
     }
 }

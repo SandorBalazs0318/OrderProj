@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderProject.ViewModel
 {
-    public class AruViewModel
+    public class FelhasznalokViewModel
     {
 
     }

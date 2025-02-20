@@ -4,13 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderProject"
+        xmlns:viewModel="clr-namespace:OrderProject.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         d:Background="Silver">
     <StackPanel>
         
         <DockPanel>
-            
+            <Menu>
+                <MenuItem Header="Áru" />
+                <MenuItem Header="Felhasználók">
+                    <MenuItem Header="Kezelés"></MenuItem>
+                    <MenuItem Header="Módosítás"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Megrendelés" />
+            </Menu>
         </DockPanel>
     </StackPanel>
 </Window>

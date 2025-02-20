@@ -5,20 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderProject"
         xmlns:viewModel="clr-namespace:OrderProject.ViewModel"
+        xmlns:view="clr-namespace:OrderProject.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         d:Background="Silver">
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:AruViewModel}">
+            <view:AruView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:MegrendelesViewModel}">
+            <view:MegrendelesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:KezelesViewModel}">
+            <view:KezelesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ModositasViewModel}">
+            <view:ModositasView />
+        </DataTemplate>
+    </Window.Resources>
     <StackPanel>
-        
         <DockPanel>
             <Menu>
-                <MenuItem Header="Áru" />
+                <MenuItem Header="Áru" Command="{Binding ShowAruViewCommand}"/>
                 <MenuItem Header="Felhasználók">
-                    <MenuItem Header="Kezelés"></MenuItem>
-                    <MenuItem Header="Módosítás"></MenuItem>
+                    <MenuItem Header="Kezelés" Command="{Binding ShowKezelesViewCommand}"></MenuItem>
+                    <MenuItem Header="Módosítás" Command="{Binding ShowModositasViewCommand}"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="Megrendelés" />
+                <MenuItem Header="Megrendelés" Command="{Binding ShowMegrendelesViewCommand}"/>
             </Menu>
         </DockPanel>
+        <ContentControl Content="{Binding CurrentView}" />
     </StackPanel>
 </Window>

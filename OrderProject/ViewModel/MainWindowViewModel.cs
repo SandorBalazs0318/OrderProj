@@ -11,9 +11,10 @@ namespace OrderProject.ViewModel
     public partial class MainWindowViewModel : ObservableObject
     {
 
-        private readonly FelhasznalokViewModel _felhasznalokViewModel = new FelhasznalokViewModel();
         private readonly AruViewModel _aruViewModel = new AruViewModel();
         private readonly MegrendelesViewModel _megrendelesViewModel = new MegrendelesViewModel();
+        private readonly KezelesViewModel _kezelesViewModel = new KezelesViewModel();
+        private readonly ModositasViewModel _modositasViewModel = new ModositasViewModel();
 
         public MainWindowViewModel()
         {
@@ -36,6 +37,15 @@ namespace OrderProject.ViewModel
         }
 
         [RelayCommand]
+        private void ShowModositasView()
+        {
+            _currentView = _modositasViewModel;
+        }
 
+        [RelayCommand]
+        private void ShowKezelesView()
+        {
+            _currentView = _kezelesViewModel;
+        }
     }
 }

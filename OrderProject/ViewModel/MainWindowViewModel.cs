@@ -16,13 +16,13 @@ namespace OrderProject.ViewModel
         private readonly KezelesViewModel _kezelesViewModel = new KezelesViewModel();
         private readonly ModositasViewModel _modositasViewModel = new ModositasViewModel();
 
+        [ObservableProperty]
+        private object _currentView = new object();
+
         public MainWindowViewModel()
         {
             _currentView = _aruViewModel;
         }
-
-        [ObservableProperty]
-        private object _currentView = new object();
 
         [RelayCommand]
         private void ShowMegrendelesView()
